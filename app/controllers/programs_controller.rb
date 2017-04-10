@@ -9,11 +9,11 @@ class ProgramsController < ApplicationController
     @your_output = seconds_since_i_was_born
 
     first = "Natasha"
-  last = "Singh"
+    last = "Singh"
 
-  @first_then_last = first + " " + last
+    @first_then_last = first + " " + last
 
-  @last_then_first = last + ", " + first
+    @last_then_first = last + ", " + first
 
     render("programs/home.html.erb")
   end
@@ -23,13 +23,13 @@ class ProgramsController < ApplicationController
 
     the_number = rand(100)
 
- if the_number < 25
-   @your_output = "It's going to be your lucky day today"
- elsif the_number > 75
-   @your_output = "Don't leave home today"
- else
-   @your_output = "It'll be an okay day today"
- end
+    if the_number < 25
+      @your_output = "It's going to be your lucky day today"
+    elsif the_number > 75
+      @your_output = "Don't leave home today"
+    else
+      @your_output = "It'll be an okay day today"
+    end
 
     render("programs/first_program.html.erb")
   end
@@ -37,18 +37,18 @@ class ProgramsController < ApplicationController
   def second_program
     # Your code goes below.
 
- #  the_number = rand(100)
- #
- #  if the_number < 33
- #   @your_output = "rock"
- # elsif the_number < 66  && the_number > 34
- #   @your_output = "paper"
- #  else
- #   @your_output = "scissors"
- #  end
- # how do to part 2 of displaying winner?
+    #  the_number = rand(100)
+    #
+    #  if the_number < 33
+    #   @your_output = "rock"
+    # elsif the_number < 66  && the_number > 34
+    #   @your_output = "paper"
+    #  else
+    #   @your_output = "scissors"
+    #  end
+    # how do to part 2 of displaying winner?
 
-  our_numbers = [4, 10, 6]        # Create an array of numbers
+    our_numbers = [4, 10, 6]        # Create an array of numbers
     squared_numbers = []            # Create an empty array
 
     our_numbers.each do |num|       # For each element in numbers, (refer to it as "num")
@@ -68,9 +68,19 @@ class ProgramsController < ApplicationController
     numbers = (1..999).to_a
 
     # Your code goes below.
+    myarray = []
+    numbers.each do |num|
+      if num%3 == 0 || num%5 == 0
+        myarray.push(num)
+      end
 
-    @your_output = "sum of squares"
+      # total = 0
+      # myarray.each do |value|
+      #   total = total + value
+      # end
 
-    render("programs/third_program.html.erb")
+      @your_output = myarray.sum
+
+      render("programs/third_program.html.erb")
+    end
   end
-end
