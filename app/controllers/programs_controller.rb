@@ -74,9 +74,9 @@ class ProgramsController < ApplicationController
         myarray.push(num)
       end
 
-      # total = 0
+      # totalvalue = 0
       # myarray.each do |value|
-      #   total = total + value
+      # total = total + value
       # end
 
       @your_output = myarray.sum
@@ -84,3 +84,4 @@ class ProgramsController < ApplicationController
       render("programs/third_program.html.erb")
     end
   end
+end
